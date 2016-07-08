@@ -195,7 +195,7 @@ func RowsFromCSVString(columns []string, s string, c ...rune) driver.Rows {
 			// If enableTimeParsing is on, check to see if this is a
 			// time in RFC33339 format
 			if d.enableTimeParsing {
-				if time, err := time.Parse(time.RFC3339, v); err == nil {
+				if time, err := time.Parse("2006-01-02 15:04:05", v); err == nil {
 					row[i] = time
 				} else {
 					row[i] = v
